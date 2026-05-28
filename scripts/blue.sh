@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice=$(echo -e "󰂯 Power On\n󰂲 Power Off\n󰂰 Scan\n󰾰 Devices\n󰩈 Exit" | if pgrep -x "bluetoothctl" > /dev/null; then rofi -dmenu -mesg "Bluetooth | Scanning..."; else rofi -dmenu -mesg "Bluetooth"; fi)
+choice=$(echo -e "󰂯 Power On\n󰂲 Power Off\n󰂰 Scan\n󰾰 Devices\n󰩈 Exit" | if pgrep -x "bluetoothctl" > /dev/null; then rofi -dmenu -theme ~/.config/rofi/bluetooth.rasi -mesg "Bluetooth | Scanning..."; else rofi -dmenu -theme ~/.config/rofi/bluetooth.rasi -mesg "Bluetooth"; fi)
 
 case "$choice" in
   "󰂯 Power On") bluetoothctl power on ;;

@@ -29,4 +29,4 @@ do
 done
 mkdir -p /home/$USER/.config/rofi
 cp -r scripts /home/$USER/.config/rofi
-
+cp bluetooth.rasi /home/$USER/.config/rofi/
