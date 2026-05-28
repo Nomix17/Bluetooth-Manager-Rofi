@@ -1,7 +1,7 @@
 #!/bin/bash
 while true; do
 id="$1"
-choice="$(echo -e "󱘖 Connect\n Disconnect\n Pair\n󰆴 Remove" | rofi -dmenu -theme ~/.config/rofi/bluetooth.rasi -mesg "$(bluetoothctl devices | awk '{sub(/^Device /,""); print}'| grep "$id" | awk '{print $1, " | ", substr($0, index($0,$2))}')")"
+choice="$(echo -e "󱘖 Connect\n Disconnect\n Pair\n󰆴 Remove" | rofi -dmenu -theme ~/.config/rofi/bluetooth.rasi -mesg "$(bluetoothctl devices | awk '{sub(/^Device /,""); print}'| grep "$id" | awk '{print $1, " | ", substr($0, index($0,$2))}')")"
 case "$choice" in
 	"󱘖 Connect") bluetoothctl connect "$id" ;;
 	" Disconnect") bluetoothctl disconnect "$id" ;;
